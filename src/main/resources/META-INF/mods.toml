@@ -1,0 +1,38 @@
+# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
+    modLoader="javafml"
+    # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
+    # Forge for 1.15.2 is version 31
+    loaderVersion="[34,)"
+    # A URL to refer people to when problems occur with this mod
+    issueTrackerURL="https://github.com/MackQian/OSSMinecraftMod/issues"
+    # If the mods defined in this file should show as seperate resource packs
+    showAsResourcePack=false
+
+    license="MIT"
+
+    [[mods]]
+      modId="ossmod"
+      version="1.0.0.0"
+      displayName="Oss Mod"
+      updateJSONURL="https://minecraftforge.net/versions.json"
+      displayURL="https://minecraftforge.net"
+      logoFile="logo.png"
+      credits="I'd like to thank my mother and father."
+      authors="Author"
+      description='''
+      Lets you craft dirt into diamonds. This is a traditional mod that has existed for eons. It is ancient. The holy Notch created it. Jeb rainbowfied it. Dinnerbone made it upside down. Etc.
+      '''
+
+      [[dependencies.ossmod]]
+        modId="forge"
+        mandatory=true
+        versionRange="[34,)"
+        ordering="NONE"
+        side="BOTH"
+
+      [[dependencies.ossmod]]
+        modId="minecraft"
+        mandatory=true
+        versionRange="[1.16.5]"
+        ordering="NONE"
+        side="BOTH"

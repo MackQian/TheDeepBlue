@@ -13,15 +13,14 @@
     [[mods]]
       modId="ossmod"
       version="1.0.0.0"
-      displayName="Oss Mod"
+      displayName="The Deep Blue"
       updateJSONURL="https://minecraftforge.net/versions.json"
-      displayURL="https://minecraftforge.net"
+      displayURL="https://github.com/MackQian/OSSMinecraftMod"
       logoFile="logo.png"
-      credits="I'd like to thank my mother and father."
-      authors="Author"
+      credits=""
+      authors="Trevor Crystal, Andrew Khanschassoff, Mack Qian, Aayush Sriram, Stephen Trempel"
       description='''
-      Lets you craft dirt into diamonds. This is a traditional mod that has existed for eons. It is ancient. The holy Notch created it. Jeb rainbowfied it. Dinnerbone made it upside down. Etc.
-      '''
+      A mod that adds an underwater dimension. It can be reached by visiting a water temple.'''
 
       [[dependencies.ossmod]]
         modId="forge"

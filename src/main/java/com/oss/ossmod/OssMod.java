@@ -19,11 +19,13 @@ import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("ossmod")
+@Mod(OssMod.MODID)
 public class OssMod
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    
+    public static final String MODID = "ossmod";
 
     public OssMod() {
         // Register the setup method for modloading

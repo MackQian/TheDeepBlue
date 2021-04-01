@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "ossmod:block/test_block_face0",
+        "up": "ossmod:block/test_block_face1",
+        "north": "ossmod:block/test_block_face2",
+        "east": "ossmod:block/test_block_face5",
+        "south": "ossmod:block/test_block_face3",
+        "west": "ossmod:block/test_block_face4",
+        "particle": "block/lapis_block"
+    }
+}

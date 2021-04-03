@@ -53,9 +53,9 @@ public class Registration {
     // Registering the Blobfish
 
     // Possibly change entityclassification.create to entityclassification.watercreature
-//    public static final RegistryObject<EntityType<BlobfishEntity>> WEIRDMOB = ENTITIES.register("blobfish", () -> EntityType.Builder.of(BlobfishEntity::new, EntityClassification.CREATURE)
-//            .sized(.5f, .5f)
-//            .setShouldReceiveVelocityUpdates(false)
-//            .build("blobfish"));
+    public static final RegistryObject<EntityType<BlobfishEntity>> BLOBFISH = ENTITIES.register("blobfish", () -> EntityType.Builder.of(BlobfishEntity::new, EntityClassification.CREATURE)
+            .sized(.5f, .5f)
+            .setShouldReceiveVelocityUpdates(false)
+            .build("blobfish"));
 
 }

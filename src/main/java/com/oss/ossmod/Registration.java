@@ -54,7 +54,7 @@ public class Registration {
 
     // Possibly change entityclassification.create to entityclassification.watercreature
     public static final RegistryObject<EntityType<BlobfishEntity>> BLOBFISH = ENTITIES.register("blobfish", () -> EntityType.Builder.of(BlobfishEntity::new, EntityClassification.CREATURE)
-            .sized(.5f, .5f)
+            .sized(0.5f, 0.5f)
             .setShouldReceiveVelocityUpdates(false)
             .build("blobfish"));
 

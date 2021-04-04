@@ -10,11 +10,13 @@ public class BlobfishModel extends EntityModel<BlobfishEntity>  {
 
 
 
-    public ModelRenderer body;
+    private final ModelRenderer body;
 
     public BlobfishModel() {
+
         body = new ModelRenderer(this, 0, 0);
-        body.addBox(-3, 14, -3, 6, 6, 6);
+        body.addBox(-3, 16, -3, 6, 6, 6);
+//        body.addbox();
     }
 
     @Override

@@ -14,7 +14,8 @@ public class BlobfishRenderer extends MobRenderer<BlobfishEntity, BlobfishModel>
     private static final ResourceLocation TEXTURE = new ResourceLocation(OssMod.MODID, "textures/entity/blobfish.png");
 
     public BlobfishRenderer(EntityRendererManager manager) {
-        super(manager, new BlobfishModel(), 0.5f);
+        // The float at the end is the shadow size
+        super(manager, new BlobfishModel(), 0.2f);
     }
 
     @Nullable

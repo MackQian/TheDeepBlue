@@ -1,12 +1,14 @@
 package com.oss.ossmod;
 
 import com.oss.ossmod.common.entity.BlobfishEntity;
+import com.oss.ossmod.common.items.scubaItem;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -57,5 +59,7 @@ public class Registration {
             .sized(0.5f, 0.5f)
             .setShouldReceiveVelocityUpdates(false)
             .build("blobfish"));
+
+    public static final RegistryObject<scubaItem> SCUBA_ITEM = ITEMS.register("scuba_item", scubaItem::new);
 
 }

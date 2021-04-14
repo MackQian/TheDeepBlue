@@ -1,15 +1,5 @@
 {
-  "comment1": "this json is taken from https://github.com/TelepathicGrunt/UltraAmplifiedDimension-Forge.",
-  "comment2": "it is under the lgpl-v3 license and as such will not actually be used or included in our mod.",
-  "comment3": "it is just for testing purposes to see if I can get a new biome to generate and will be removed",
-  "comment4": "once that is done and I implement my own biome.",
-  "player_spawn_friendly": false,
-  "category": "mesa",
-  "precipitation": "none",
-  "temperature": 2.0,
-  "downfall": 0.0,
-  "depth": 0.1,
-  "scale": 0.2,
+  "scale": 0.1,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -17,119 +7,87 @@
       "block_search_extent": 8,
       "offset": 2.0
     },
-    "sky_color": 7907327,
-    "foliage_color": 10387789,
-    "grass_color": 9470285,
+    "sky_color": 8103167,
     "fog_color": 12638463,
-    "water_color": 4159204,
+    "water_color": 4020182,
     "water_fog_color": 329011
   },
-  "surface_builder": "ultra_amplified_dimension:badlands_surface_builder",
+  "surface_builder": "minecraft:grass",
   "carvers": {
     "air": [
-      "ultra_amplified_dimension:cave_cavity",
-      "ultra_amplified_dimension:ravine",
-      "ultra_amplified_dimension:long_ravine"
+      "minecraft:ocean_cave",
+      "minecraft:canyon"
     ],
     "liquid": [
+      "minecraft:underwater_canyon",
+      "minecraft:underwater_cave"
     ]
   },
   "features": [
+    [],
     [
-      "ultra_amplified_dimension:ores/ellipsoid_pocket",
-      "ultra_amplified_dimension:misc/contain_underground_liquids"
-    ],
-    [
-      "ultra_amplified_dimension:ponds/surface_slime",
-      "ultra_amplified_dimension:ponds/underground_water_badlands",
-      "ultra_amplified_dimension:ponds/underground_lava"
-    ],
-    [
-      "ultra_amplified_dimension:columns/vertical_badlands",
-      "ultra_amplified_dimension:columns/ramp_badlands",
-      "ultra_amplified_dimension:misc/glow_patch_surface",
-      "ultra_amplified_dimension:misc/glow_patch_underground",
-      "ultra_amplified_dimension:misc/contain_liquid_for_oceans"
-    ],
-    [
-      "ultra_amplified_dimension:dungeons/badlands_high",
-      "ultra_amplified_dimension:dungeons/badlands_middle",
-      "ultra_amplified_dimension:dungeons/badlands_bottom"
-    ],
-    [
-      "ultra_amplified_dimension:ministructures/hanging_ruins"
+      "minecraft:lake_water",
+      "minecraft:lake_lava"
     ],
     [],
     [
-      "ultra_amplified_dimension:ores/ellipsoid_red_sand",
-      "ultra_amplified_dimension:ores/ellipsoid_red_sandstone",
-      "ultra_amplified_dimension:ores/ore_dirt",
-      "ultra_amplified_dimension:ores/ore_gravel",
-      "ultra_amplified_dimension:ores/ore_granite",
-      "ultra_amplified_dimension:ores/ore_diorite",
-      "ultra_amplified_dimension:ores/ore_andesite",
-      "ultra_amplified_dimension:ores/ore_coal",
-      "ultra_amplified_dimension:ores/ore_iron",
-      "ultra_amplified_dimension:ores/ore_iron_deep",
-      "ultra_amplified_dimension:ores/ore_gold_badlands",
-      "ultra_amplified_dimension:ores/ore_redstone",
-      "ultra_amplified_dimension:ores/ore_diamond",
-      "ultra_amplified_dimension:ores/ore_lapis",
-      "ultra_amplified_dimension:ores/ore_gold_sealevel_badlands",
-      "ultra_amplified_dimension:ores/ore_redstone_sealevel",
-      "ultra_amplified_dimension:ores/ore_lapis_sealevel",
-      "ultra_amplified_dimension:ores/ore_gold_extra_badlands",
-      "ultra_amplified_dimension:disk/coarse_dirt",
-      "ultra_amplified_dimension:disk/clay",
-      "ultra_amplified_dimension:disk/gravel"
+      "minecraft:monster_room"
+    ],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite",
+      "minecraft:ore_diorite",
+      "minecraft:ore_andesite",
+      "minecraft:ore_coal",
+      "minecraft:ore_iron",
+      "minecraft:ore_gold",
+      "minecraft:ore_redstone",
+      "minecraft:ore_diamond",
+      "minecraft:ore_lapis",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
+    ],
+    [],
+    [
+      "minecraft:trees_water",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_badlands",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin",
+      "minecraft:spring_water",
+      "minecraft:spring_lava",
+      "minecraft:seagrass_deep_cold",
+      "minecraft:seagrass_simple",
+      "minecraft:kelp_cold"
     ],
     [
-      "ultra_amplified_dimension:springs/water",
-      "ultra_amplified_dimension:springs/water_narrow_range",
-      "ultra_amplified_dimension:springs/lava",
-      "ultra_amplified_dimension:springs/lava_narrow_range"
-    ],
-    [
-      "ultra_amplified_dimension:vegetation/safer_cactus",
-      "ultra_amplified_dimension:vegetation/patch/sugar_cane_dense",
-      "ultra_amplified_dimension:vegetation/patch/pumpkin",
-      "ultra_amplified_dimension:vegetation/patch/dead_bush",
-      "ultra_amplified_dimension:vegetation/patch/grass_5-04",
-      "ultra_amplified_dimension:vegetation/mushroom/red_normal",
-      "ultra_amplified_dimension:vegetation/mushroom/brown_normal"
-    ],
-    [
-      "ultra_amplified_dimension:misc/snow_ice_layer_handler_feature"
+      "minecraft:freeze_top_layer"
     ]
   ],
   "starts": [
-    "minecraft:mineshaft_mesa",
-    "minecraft:stronghold",
-    "minecraft:ruined_portal"
+    "minecraft:ocean_ruin_cold",
+    "minecraft:monument",
+    "minecraft:mineshaft",
+    "minecraft:shipwreck",
+    "minecraft:ruined_portal_ocean"
   ],
   "spawners": {
     "monster": [
       {
         "type": "minecraft:spider",
-        "weight": 80,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cave_spider",
-        "weight": 20,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:husk",
-        "weight": 80,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:zombie",
-        "weight": 15,
+        "weight": 95,
         "minCount": 4,
         "maxCount": 4
       },
@@ -173,7 +131,7 @@
         "type": "minecraft:drowned",
         "weight": 5,
         "minCount": 1,
-        "maxCount": 5
+        "maxCount": 1
       }
     ],
     "creature": [],
@@ -188,32 +146,32 @@
     "water_creature": [
       {
         "type": "minecraft:squid",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:dolphin",
-        "weight": 2,
+        "weight": 3,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 4
       }
     ],
     "water_ambient": [
       {
-        "type": "minecraft:pufferfish",
+        "type": "minecraft:cod",
         "weight": 15,
-        "minCount": 1,
-        "maxCount": 3
+        "minCount": 3,
+        "maxCount": 6
       },
       {
-        "type": "minecraft:tropical_fish",
-        "weight": 25,
-        "minCount": 8,
-        "maxCount": 8
+        "type": "minecraft:salmon",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 5
       }
     ],
     "misc": []
   },
-  "spawn_costs": {}
+  "spawn_costs": {},
+  "player_spawn_friendly": false,
+  "precipitation": "rain",
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "category": "ocean",
+  "depth": -1.8
 }

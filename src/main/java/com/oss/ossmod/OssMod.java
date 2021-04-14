@@ -5,7 +5,10 @@ import com.oss.ossmod.common.entity.BlobfishRenderer;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -61,7 +64,7 @@ public class OssMod
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
         RenderingRegistry.registerEntityRenderingHandler(Registration.BLOBFISH.get(), BlobfishRenderer::new);
-
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(OssMod.MODID, "deep_blue")), 2));
 
         event.enqueueWork(() -> {
             // Register the blobfish's attributes

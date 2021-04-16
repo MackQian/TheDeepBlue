@@ -1,34 +1,18 @@
-package com.oss.ossmod.common.entity;
+package com.oss.ossmod.common.entity.blobfish;
 
 
-import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.passive.AnimalEntity;
 
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
-import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.network.IPacket;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraft.entity.AgeableEntity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
-
-import javax.annotation.Nullable;
 
 /*
 A blobfish entity

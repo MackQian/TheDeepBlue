@@ -1,13 +1,12 @@
 package com.oss.ossmod;
 
-import com.oss.ossmod.common.entity.BlobfishEntity;
-import com.oss.ossmod.common.entity.BlobfishRenderer;
-import net.minecraft.block.Block;
+import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
+import com.oss.ossmod.common.entity.blobfish.BlobfishRenderer;
+import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
+import com.oss.ossmod.common.entity.seaurchin.SeaurchinRenderer;
+
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -18,13 +17,9 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
-
-import net.minecraftforge.fml.RegistryObject;
 
 import java.util.stream.Collectors;
 
@@ -56,16 +51,15 @@ public class OssMod
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
         RenderingRegistry.registerEntityRenderingHandler(Registration.BLOBFISH.get(), BlobfishRenderer::new);
-
+        RenderingRegistry.registerEntityRenderingHandler(Registration.SEAURCHIN.get(), SeaurchinRenderer::new);
 
         event.enqueueWork(() -> {
-            // Register the blobfish's attributes
+            // Register the entity attributes
             GlobalEntityTypeAttributes.put(Registration.BLOBFISH.get(), BlobfishEntity.prepareAttributes().build());
+            GlobalEntityTypeAttributes.put(Registration.SEAURCHIN.get(), SeaurchinEntity.prepareAttributes().build());
+
         });
 
     }

@@ -2,6 +2,8 @@
 This file converts an outdated 1.15 model file into one that works with 1.16.
 To use, place this script in a directory with 1 or more outdated java files, and each
 will have a copy of it created with correct functions and structure.
+
+Note: You must fix textureWidth and textureSize manually
 '''
 
 import glob, os

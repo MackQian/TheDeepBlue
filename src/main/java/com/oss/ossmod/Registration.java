@@ -1,16 +1,13 @@
 package com.oss.ossmod;
 
-import com.oss.ossmod.common.entity.BlobfishEntity;
+import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
+import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -58,4 +55,8 @@ public class Registration {
             .setShouldReceiveVelocityUpdates(false)
             .build("blobfish"));
 
+    public static final RegistryObject<EntityType<SeaurchinEntity>> SEAURCHIN = ENTITIES.register("seaurchin", () -> EntityType.Builder.of(SeaurchinEntity::new, EntityClassification.CREATURE)
+            .sized(0.5f, 0.5f)
+            .setShouldReceiveVelocityUpdates(false)
+            .build("seaurchin"));
 }

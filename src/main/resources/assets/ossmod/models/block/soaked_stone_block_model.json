@@ -1,12 +1,3 @@
 {
-    "parent": "block/cube",
-    "textures": {
-        "down": "block/stone",
-        "up": "block/stone",
-        "north": "block/stone",
-        "east": "block/stone",
-        "south": "block/stone",
-        "west": "block/stone",
-        "particle": "dripping_water"
-    }
+    "parent": "block/stone"
 }

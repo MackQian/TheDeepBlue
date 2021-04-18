@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 public class SoakedStoneBlock extends BreakableBlock {
 
     public SoakedStoneBlock() {
-        super(Block.Properties.of(Material.STONE));
+        super(Block.Properties.of(Material.STONE).strength(1.5f));
     }
 
     public void playerDestroy(World p_180657_1_, PlayerEntity p_180657_2_, BlockPos p_180657_3_, BlockState p_180657_4_, @Nullable TileEntity p_180657_5_, ItemStack p_180657_6_) {

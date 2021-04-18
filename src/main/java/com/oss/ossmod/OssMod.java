@@ -2,6 +2,7 @@ package com.oss.ossmod;
 
 import com.oss.ossmod.common.entity.BlobfishEntity;
 import com.oss.ossmod.common.entity.BlobfishRenderer;
+import com.oss.ossmod.biomes.DeepBlueBiome;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -11,6 +12,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -55,6 +57,10 @@ public class OssMod
         // Deferred Registration
         Registration.init();
 
+        // Add the biome
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        DeepBlueBiome.BIOMES.register(modEventBus);
+
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -64,7 +70,7 @@ public class OssMod
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
         RenderingRegistry.registerEntityRenderingHandler(Registration.BLOBFISH.get(), BlobfishRenderer::new);
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(OssMod.MODID, "deep_blue")), 2));
+        BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(OssMod.MODID, "deep_blue")), 2));
 
         event.enqueueWork(() -> {
             // Register the blobfish's attributes

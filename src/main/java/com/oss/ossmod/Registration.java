@@ -1,6 +1,7 @@
 package com.oss.ossmod;
 
 import com.oss.ossmod.block.SoakedStoneBlock;
+import com.oss.ossmod.block.SoakedStoneBlockTile;
 import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
 import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
 import net.minecraft.block.Block;
@@ -52,7 +53,7 @@ public class Registration {
     // Registering soaked stone
     public static final RegistryObject<SoakedStoneBlock> SOAKEDSTONEBLOCK = BLOCKS.register("soaked_stone_block", SoakedStoneBlock::new);
     public static final RegistryObject<Item> SOAKEDSTONEBLOCK_ITEM = ITEMS.register("soaked_stone_block", () -> new BlockItem(SOAKEDSTONEBLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
-//    public static final RegistryObject<TileEntityType<SoakedStoneBlockTile>> SOAKEDSTONEBLOCK_TILE = TILES.register("soakedstoneblock", () -> TileEntityType.Builder.of(SoakedStoneBlockTile::new, SOAKEDSTONEBLOCK.get()).build(null));
+    public static final RegistryObject<TileEntityType<SoakedStoneBlockTile>> SOAKEDSTONEBLOCK_TILE = TILES.register("soaked_stone_block", () -> TileEntityType.Builder.of(SoakedStoneBlockTile::new, SOAKEDSTONEBLOCK.get()).build(null));
 
 
     // Registering the Blobfish

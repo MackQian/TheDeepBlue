@@ -1,7 +1,5 @@
 package com.oss.ossmod;
 
-import com.oss.ossmod.common.entity.BlobfishEntity;
-import com.oss.ossmod.common.entity.BlobfishRenderer;
 import com.oss.ossmod.biomes.DeepBlueBiome;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

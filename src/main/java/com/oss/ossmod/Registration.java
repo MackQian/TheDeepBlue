@@ -1,12 +1,15 @@
 package com.oss.ossmod;
 
+import com.oss.ossmod.block.SoakedStoneBlock;
 import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
 import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -45,6 +48,11 @@ public class Registration {
 //        World world = inv.player.getCommandSenderWorld();
 //        return new FirstBlockContainer(windowId, world, pos, inv, inv.player);
 //    }));
+    
+    // Registering soaked stone
+    public static final RegistryObject<SoakedStoneBlock> SOAKEDSTONEBLOCK = BLOCKS.register("soakedstoneblock", SoakedStoneBlock::new);
+    public static final RegistryObject<Item> SOAKEDSTONEBLOCK_ITEM = ITEMS.register("soakedstoneblock", () -> new BlockItem(SOAKEDSTONEBLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+//    public static final RegistryObject<TileEntityType<SoakedStoneBlockTile>> SOAKEDSTONEBLOCK_TILE = TILES.register("soakedstoneblock", () -> TileEntityType.Builder.of(SoakedStoneBlockTile::new, SOAKEDSTONEBLOCK.get()).build(null));
 
 
     // Registering the Blobfish

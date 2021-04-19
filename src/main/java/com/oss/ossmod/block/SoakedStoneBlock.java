@@ -2,11 +2,10 @@ package com.oss.ossmod.block;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BreakableBlock;
-import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,14 +16,14 @@ import net.minecraft.world.World;
 
 public class SoakedStoneBlock extends BreakableBlock {
 
-    public SoakedStoneBlock() {
-        super(Block.Properties.of(Material.STONE).strength(1.5f));
+    public SoakedStoneBlock(AbstractBlock.Properties p_i48375_1_) {
+        super(p_i48375_1_);
     }
 
-    public void playerDestroy(World p_180657_1_, PlayerEntity p_180657_2_, BlockPos p_180657_3_, BlockState p_180657_4_, @Nullable TileEntity p_180657_5_, ItemStack p_180657_6_) {
-        super.playerDestroy(p_180657_1_, p_180657_2_, p_180657_3_, p_180657_4_, p_180657_5_, p_180657_6_);
-        if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, p_180657_6_) == 0) {
-            p_180657_1_.setBlockAndUpdate(p_180657_3_, Blocks.WATER.defaultBlockState());
+    public void playerDestroy(World world, PlayerEntity playerEntity, BlockPos blockPos, BlockState blockState, @Nullable TileEntity tileEntity, ItemStack itemStack) {
+        super.playerDestroy(world, playerEntity, blockPos, blockState, tileEntity, itemStack);
+        if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, itemStack) == 0) {
+            world.setBlockAndUpdate(blockPos, Blocks.WATER.defaultBlockState());
         }
     }
 }

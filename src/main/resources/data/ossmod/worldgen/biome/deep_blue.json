@@ -1,5 +1,5 @@
 {
-  "scale": 0.2,
+  "scale": 0.7,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -7,13 +7,22 @@
       "block_search_extent": 8,
       "offset": 2.0
     },
-    "sky_color": 8103167,
-    "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011
+    "sky_color": 0,
+    "fog_color": 0,
+    "water_color": 786524,
+    "water_fog_color": 786524
   },
   "surface_builder": "minecraft:nope",
-  "carvers": {},
+  "carvers": {
+    "air": [
+      "minecraft:ocean_cave",
+      "minecraft:canyon"
+    ],
+    "liquid": [
+      "minecraft:underwater_canyon",
+      "minecraft:underwater_cave"
+    ]
+  },
   "features": [
     [],
     [],
@@ -33,15 +42,65 @@
     "monster": [],
     "creature": [],
     "ambient": [],
-    "water_creature": [],
-    "water_ambient": [],
+    "water_creature": [
+      {
+        "type": "minecraft:squid",
+        "weight": 20,
+        "minCount": 3,
+        "maxCount": 5
+      },
+      {
+        "type": "minecraft:dolphin",
+        "weight": 15,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ],
+    "water_ambient": [
+      {
+        "type": "minecraft:pufferfish",
+        "weight": 23,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:tropical_fish",
+        "weight": 30,
+        "minCount": 10,
+        "maxCount": 15
+      },
+      {
+        "type": "minecraft:cod",
+        "weight": 26,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "minecraft:salmon",
+        "weight": 35,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "ossmod:blobfish",
+        "weight": 30,
+        "minCount": 3,
+        "maxCount": 5
+      },
+      {
+        "type": "ossmod:seaurchin",
+        "weight": 25,
+        "minCount": 6,
+        "maxCount": 10
+      }
+    ],
     "misc": []
   },
   "spawn_costs": {},
-  "player_spawn_friendly": false,
+  "player_spawn_friendly": true,
   "precipitation": "none",
-  "temperature": 0.5,
-  "downfall": 0.5,
-  "category": "none",
-  "depth": 0.1
+  "temperature": 0.25,
+  "downfall": 0.85,
+  "category": "ocean",
+  "depth": -1.5
 }

@@ -31,7 +31,7 @@ Finally, create a pull request with your code. Our Gradle GitHub action will mak
 
 ## Fixing Existing Bugs
 ### 1. Find a bug that you would like to fix
-Browse our [issues page](https://github.com/MackQian/OSSMinecraftMod/issues?q=is%3Aopen+is%3Aissue) and look for a bug that you would like to tackle.
+Browse our [issues page](https://github.com/MackQian/OSSMinecraftMod/issues?q=is%3Aopen+is%3Aissue) and look for a bug that you would like to tackle. We will do our best to mark straightforward issues with the `good first issue` label.
 
 ### 2. Fork our repository
 Create a fork of this repository, then clone it to your computer. Check out the [Getting started with our code](#getting-started-with-our-code) section of this document for a quick how-to on building the project.

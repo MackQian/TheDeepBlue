@@ -1,6 +1,6 @@
 package com.oss.ossmod;
 
-import com.oss.ossmod.common.item.scubaItem;
+import com.oss.ossmod.common.items.scubaitem;
 import com.oss.ossmod.common.block.SoakedSandBlock;
 import com.oss.ossmod.common.block.SoakedStoneBlock;
 import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
@@ -61,7 +61,7 @@ public class Registration {
             .build("blobfish"));
 
 
-    public static final RegistryObject<scubaItem> SCUBA_ITEM = ITEMS.register("scuba_item", scubaItem::new);
+    public static final RegistryObject<scubaitem> SCUBA_ITEM = ITEMS.register("scuba_item", scubaitem::new);
     public static final RegistryObject<EntityType<SeaurchinEntity>> SEAURCHIN = ENTITIES.register("seaurchin", () -> EntityType.Builder.of(SeaurchinEntity::new, EntityClassification.CREATURE)
             .sized(0.5f, 0.5f)
             .setShouldReceiveVelocityUpdates(false)

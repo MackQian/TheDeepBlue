@@ -11,6 +11,7 @@ This document is split into four sections:
 Stephen
 
 ## Style guidelines
+Although we don't have any formal guidelines on Java code itself, we ask that you make sure to use comments wherever necessary. Spending less than a minute write out a comment explaining your block of code can save another developer half an hour of reading and testing it. We also ask that you follow our current directory structure, separating Client and Server code into our `client` and `common` directories. 
 
 ## Contributing New Features
 

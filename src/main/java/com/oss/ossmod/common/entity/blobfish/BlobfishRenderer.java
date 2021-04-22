@@ -1,4 +1,4 @@
-package com.oss.ossmod.common.entity;
+package com.oss.ossmod.common.entity.blobfish;
 
 
 import com.oss.ossmod.OssMod;

@@ -44,7 +44,7 @@ public class Registration {
 //    }));
     
     // Registering soaked stone
-    public static final RegistryObject<SoakedStoneBlock> SOAKED_STONE_BLOCK = BLOCKS.register("soaked_stone_block", () -> new SoakedStoneBlock(Block.Properties.of(Material.STONE).strength(1.5f)));
+    public static final RegistryObject<SoakedStoneBlock> SOAKED_STONE_BLOCK = BLOCKS.register("soaked_stone_block", () -> new SoakedStoneBlock(Block.Properties.of(Material.STONE).strength(1.5f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Item> SOAKED_STONE_BLOCK_ITEM = ITEMS.register("soaked_stone_block", () -> new BlockItem(SOAKED_STONE_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
     public static final RegistryObject<SoakedSandBlock> SOAKED_SAND_BLOCK = BLOCKS.register("soaked_sand_block", () -> new SoakedSandBlock(Block.Properties.of(Material.SAND).strength(0.5f)));
     public static final RegistryObject<Item> SOAKED_SAND_BLOCK_ITEM = ITEMS.register("soaked_sand_block", () -> new BlockItem(SOAKED_SAND_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));

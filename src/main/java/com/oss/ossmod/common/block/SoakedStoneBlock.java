@@ -1,4 +1,4 @@
-package com.oss.ossmod.block;
+package com.oss.ossmod.common.block;
 
 import javax.annotation.Nullable;
 
@@ -14,9 +14,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SoakedSandBlock extends BreakableBlock {
+public class SoakedStoneBlock extends BreakableBlock {
 
-    public SoakedSandBlock(AbstractBlock.Properties p_i48375_1_) {
+    public SoakedStoneBlock(AbstractBlock.Properties p_i48375_1_) {
         super(p_i48375_1_);
     }
 

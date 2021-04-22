@@ -1,8 +1,8 @@
 package com.oss.ossmod;
 
-import com.oss.ossmod.common.items.scubaItem;
-import com.oss.ossmod.block.SoakedSandBlock;
-import com.oss.ossmod.block.SoakedStoneBlock;
+import com.oss.ossmod.common.item.scubaItem;
+import com.oss.ossmod.common.block.SoakedSandBlock;
+import com.oss.ossmod.common.block.SoakedStoneBlock;
 import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
 import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
 import net.minecraft.block.Block;

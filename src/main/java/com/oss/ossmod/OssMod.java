@@ -1,23 +1,17 @@
 package com.oss.ossmod;
 
-import com.oss.ossmod.biomes.DeepBlueBiome;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
+import com.oss.ossmod.common.biomes.DeepBlueBiome;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
 import com.oss.ossmod.common.entity.blobfish.BlobfishRenderer;
 import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
 import com.oss.ossmod.common.entity.seaurchin.SeaurchinRenderer;
 
-import net.minecraft.block.Blocks;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;

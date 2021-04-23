@@ -1,5 +1,5 @@
 # Contributing
-Thanks for deciding to commit to our mod! We currently accept pull requests from any developers that are willing to contribute. If you have any questions pertaining to contributing, feel free to make a post on our [issues page](https://github.com/MackQian/OSSMinecraftMod/issues?q=is%3Aopen+is%3Aissue) with the `question` label.
+Thanks for deciding to contribute to our mod! We currently accept pull requests from any developers that are willing to contribute. If you have any questions pertaining to contributing, feel free to make a post on our [issues page](https://github.com/MackQian/OSSMinecraftMod/issues?q=is%3Aopen+is%3Aissue) with the `question` label.
 
 This document is split into four sections:
 1. [Getting Started With Our Code](#getting-started-with-our-code)

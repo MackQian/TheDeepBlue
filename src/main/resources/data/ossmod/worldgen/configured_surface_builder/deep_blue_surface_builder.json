@@ -1,0 +1,17 @@
+{
+  "config": {
+    "top_material": {
+      "Properties": {
+        "snowy": "false"
+      },
+      "Name": "minecraft:air"
+    },
+    "under_material": {
+      "Name": "ossmod:soaked_stone_block"
+    },
+    "underwater_material": {
+      "Name": "ossmod:soaked_sand_block"
+    }
+  },
+  "type": "ossmod:deep_blue_surface_builder"
+}

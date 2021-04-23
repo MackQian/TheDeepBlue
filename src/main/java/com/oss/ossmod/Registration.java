@@ -1,5 +1,7 @@
 package com.oss.ossmod;
 
+import com.oss.ossmod.common.biomes.DeepBlueBiome;
+import com.oss.ossmod.common.biomes.DeepBlueSurfaceBuilder;
 import com.oss.ossmod.common.item.scubaItem;
 import com.oss.ossmod.common.block.SoakedSandBlock;
 import com.oss.ossmod.common.block.SoakedStoneBlock;
@@ -14,6 +16,8 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -67,11 +71,16 @@ public class Registration {
             .setShouldReceiveVelocityUpdates(false)
             .build("seaurchin"));
 
+    public static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDERS = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, OssMod.MODID);
+    public static final RegistryObject<SurfaceBuilder<SurfaceBuilderConfig>> DEEP_BLUE_SURFACE_BUILDER = SURFACE_BUILDERS.register("deep_blue_surface_builder", () -> new DeepBlueSurfaceBuilder(SurfaceBuilderConfig.CODEC));
+
     public static void init() {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         TILES.register(FMLJavaModLoadingContext.get().getModEventBus());
         CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        SURFACE_BUILDERS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        DeepBlueBiome.BIOMES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }

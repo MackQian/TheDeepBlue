@@ -12,16 +12,13 @@
     "water_color": 786524,
     "water_fog_color": 786524
   },
-  "surface_builder": "minecraft:nope",
+  "surface_builder": "ossmod:deep_blue_surface_builder",
   "carvers": {
     "air": [
       "minecraft:ocean_cave",
       "minecraft:canyon"
     ],
-    "liquid": [
-      "minecraft:underwater_canyon",
-      "minecraft:underwater_cave"
-    ]
+    "liquid": []
   },
   "features": [
     [],
@@ -32,7 +29,13 @@
     [],
     [],
     [],
-    [],
+    [
+      "minecraft:warm_ocean_vegetation",
+      "minecraft:seagrass_deep_warm",
+      "minecraft:seagrass_simple",
+      "minecraft:sea_pickle",
+      "minecraft:kelp_cold"
+    ],
     [
       "minecraft:void_start_platform"
     ]
@@ -40,7 +43,14 @@
   "starts": [],
   "spawners": {
     "monster": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "minecraft:turtle",
+        "weight": 15,
+        "minCount": 2,
+        "maxCount": 5
+      }
+    ],
     "ambient": [],
     "water_creature": [
       {
@@ -51,7 +61,7 @@
       },
       {
         "type": "minecraft:dolphin",
-        "weight": 15,
+        "weight": 20,
         "minCount": 2,
         "maxCount": 4
       }
@@ -59,9 +69,9 @@
     "water_ambient": [
       {
         "type": "minecraft:pufferfish",
-        "weight": 23,
+        "weight": 25,
         "minCount": 2,
-        "maxCount": 3
+        "maxCount": 4
       },
       {
         "type": "minecraft:tropical_fish",
@@ -70,26 +80,14 @@
         "maxCount": 15
       },
       {
-        "type": "minecraft:cod",
-        "weight": 26,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:salmon",
-        "weight": 35,
-        "minCount": 1,
-        "maxCount": 3
-      },
-      {
         "type": "ossmod:blobfish",
-        "weight": 30,
+        "weight": 25,
         "minCount": 3,
         "maxCount": 5
       },
       {
         "type": "ossmod:seaurchin",
-        "weight": 25,
+        "weight": 20,
         "minCount": 6,
         "maxCount": 10
       }

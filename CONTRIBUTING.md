@@ -10,7 +10,7 @@ This document is split into four sections:
 Before starting your contribution, make sure to read our [Code of Conduct](https://github.com/MackQian/TheDeepBlue/blob/main/CODE_OF_CONDUCT.md).
 
 ## Getting Started With Our Code
-### Requierments
+### Requirements
 1. Java
 	* jdk1.8.0_281
 	* jre1.8.0_281

@@ -10,7 +10,28 @@ This document is split into four sections:
 Before starting your contribution, make sure to read our [Code of Conduct](https://github.com/MackQian/TheDeepBlue/blob/main/CODE_OF_CONDUCT.md).
 
 ## Getting Started With Our Code
-Stephen
+### Requierments
+1. Java
+	* jdk1.8.0_281
+	* jre1.8.0_281
+2. IDE (pick whichever you prefer)
+	* IntelliJ IDEA
+	* Eclipse IDE
+
+### Build and Run
+
+1. Open the project in your IDE of choice
+2. Set up the IDE:
+	* Intellij IDEA: ```gradlew genIntellijRuns```
+	* Eclipse IDE: ```gradlew genEclipseRuns```
+3. Build: ```gradlew build```
+4. Run:
+	* Client: ```gradlew runClient```
+	* Server: ```gradlew runServer```
+
+#### NOTE
+All commands should be run in the gradle terminal of your IDE.
+
 
 ## Style guidelines
 Although we don't have any formal guidelines on Java code itself, we ask that you make sure to use comments wherever necessary. Spending less than a minute write out a comment explaining your block of code can save another developer half an hour of reading and testing it. We also ask that you follow our current directory structure, separating Client and Server code into our `client` and `common` directories. 

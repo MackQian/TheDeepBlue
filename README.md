@@ -14,25 +14,3 @@ This mod is very much a work in progress. We hope to add all of those features a
 
 
 ## Use
-
-### Requierments
-1. Java
-	* jdk1.8.0_281
-	* jre1.8.0_281
-2. IDE (pick whichever you prefer)
-	* IntelliJ IDEA
-	* Eclipse IDE
-
-### Build and Run
-
-1. Open the project in your IDE of choice
-2. Set up the IDE:
-	* Intellij IDEA: ```gradlew genIntellijRuns```
-	* Eclipse IDE: ```gradlew genEclipseRuns```
-3. Build: ```gradlew build```
-4. Run:
-	* Client: ```gradlew runClient```
-	* Server: ```gradlew runServer```
-
-#### NOTE
-All commands should be run in the gradle terminal of your IDE.

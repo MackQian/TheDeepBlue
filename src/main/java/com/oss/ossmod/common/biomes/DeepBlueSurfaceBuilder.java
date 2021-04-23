@@ -31,11 +31,13 @@ public class DeepBlueSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig>
         int xpos = x & 15;
         int zpos = z & 15;
 
-        Double caveNoiseMultiplier = 0.01;
+        Double caveNoiseMultiplier = 0.03;
+        Double caveWindow = 0.027;
         Double upperSurfaceMultiplier1 = 0.01;
-        Double upperSurfaceMultiplier2 = 0.02;
+        Double upperSurfaceMultiplier2 = 0.04;
 
-        int upperSurface = (int)(deep_blue_noise.getValue(9999+(x*upperSurfaceMultiplier1),9999+(z*upperSurfaceMultiplier1)) * 50) + 200;
+        int upperSurface = (int)(deep_blue_noise.getValue(x*upperSurfaceMultiplier1,z*upperSurfaceMultiplier1) * 50) + 190;
+        upperSurface += (int)(deep_blue_noise.getValue((9999+x)*upperSurfaceMultiplier2,(9999+z)*upperSurfaceMultiplier2) * 10);
 
         for (int ypos = 255; ypos >= 0; --ypos) {
             blockpos$Mutable.set(xpos, ypos, zpos);
@@ -45,13 +47,13 @@ public class DeepBlueSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig>
             // fill is the block placed anywhere there isn't a solid block.
             // this is water for most of the biome but air above y 210
             BlockState fill = defaultFluid;
-            if(ypos > 220) {
+            if(ypos > 230) {
                 fill = air;
             }
 
             // noise to mix sand into the biome
             BlockState solid = stone;
-            if (deep_blue_noise.getValue(x*0.02,ypos*0.02,z*0.02) > 0.5) {
+            if (deep_blue_noise.getValue(x*0.02,ypos*0.02,z*0.02) > 0.3) {
                 solid = sand;
             }
 
@@ -61,18 +63,30 @@ public class DeepBlueSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig>
                 continue;
             }
 
+            //3d noise for my cracked world generation
+            if((deep_blue_noise.getValue(x*upperSurfaceMultiplier2, ypos*upperSurfaceMultiplier2, z*upperSurfaceMultiplier2) > 0.7)) {
+                chunkIn.setBlockState(blockpos$Mutable, fill, false);
+                continue;
+            }
+
             // place the fill block anywhere a cave is
             double caveVal1 = deep_blue_noise.getValue(x*caveNoiseMultiplier, ypos*caveNoiseMultiplier, z*caveNoiseMultiplier);
-            if(caveVal1 < 0.02){
-                double caveVal2 = deep_blue_noise.getValue(x*caveNoiseMultiplier, 9999+(ypos*caveNoiseMultiplier), z*caveNoiseMultiplier);
-                if (caveVal1*caveVal1 + caveVal2*caveVal2 < 0.02) {
+            if(caveVal1 < caveWindow){
+                double caveVal2 = deep_blue_noise.getValue(x*caveNoiseMultiplier, (9999+ypos)*caveNoiseMultiplier, z*caveNoiseMultiplier);
+                if (caveVal1*caveVal1 + caveVal2*caveVal2 < caveWindow) {
                     chunkIn.setBlockState(blockpos$Mutable, fill, false);
                     continue;
                 }
             }
-
-            // this is causing some weird effects, I'll look into this more later
-            //upperSurface += (int)(deep_blue_noise.getValue(x*upperSurfaceMultiplier2, ypos*upperSurfaceMultiplier2, z*upperSurfaceMultiplier2) * 5);
+            // second level of caves
+            caveVal1 = deep_blue_noise.getValue((1111+x)*caveNoiseMultiplier, (1111+ypos)*caveNoiseMultiplier, (1111+z)*caveNoiseMultiplier);
+            if(caveVal1 < caveWindow){
+                double caveVal2 = deep_blue_noise.getValue((1111+x)*caveNoiseMultiplier, (8888+ypos)*caveNoiseMultiplier, (1111+z)*caveNoiseMultiplier);
+                if (caveVal1*caveVal1 + caveVal2*caveVal2 < caveWindow) {
+                    chunkIn.setBlockState(blockpos$Mutable, fill, false);
+                    continue;
+                }
+            }
 
             if(ypos > upperSurface) {
                 chunkIn.setBlockState(blockpos$Mutable, solid, false);

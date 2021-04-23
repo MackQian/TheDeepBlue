@@ -7,6 +7,8 @@ This document is split into four sections:
 3. [Contributing New Features](#contributing-new-features)
 4. [Fixing Existing Bugs](#fixing-existing-bugs)
 
+Before making your commit, make sure to read our [Code of Conduct](https://github.com/MackQian/TheDeepBlue/blob/main/CODE_OF_CONDUCT.md).
+
 ## Getting Started With Our Code
 Stephen
 

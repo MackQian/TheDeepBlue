@@ -25,6 +25,8 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
+
 /*
 A Sea Urchin entity. Poisons the player if they get near
 */
@@ -44,8 +46,7 @@ public class SeaurchinEntity extends WaterMobEntity {
     public boolean doHurtTarget(Entity p_70652_1_) {
         if (super.doHurtTarget(p_70652_1_)) {
             if (p_70652_1_ instanceof LivingEntity) {
-                int i = 3;
-                ((LivingEntity)p_70652_1_).addEffect(new EffectInstance(Effects.POISON, i * 20, 0));
+                ((LivingEntity)p_70652_1_).addEffect(new EffectInstance(Effects.POISON, 50, 0));
             }
             return true;
         } else {
@@ -53,11 +54,24 @@ public class SeaurchinEntity extends WaterMobEntity {
         }
     }
 
+    @Override
+    public boolean hurt(@Nullable DamageSource damageSource, float damage) {
+        if (damageSource != null) {
+            Entity entity = damageSource.getEntity();
+            if (entity != null) {
+                if (entity instanceof LivingEntity) {
+                    ((LivingEntity) entity).addEffect(new EffectInstance(Effects.POISON, 150, 0));
+                }
+            }
+        }
+        return super.hurt(damageSource, damage);
+    }
+
     public static AttributeModifierMap.MutableAttribute prepareAttributes() {
         return LivingEntity.createLivingAttributes()
                 .add(Attributes.ATTACK_DAMAGE, 0.5D)
                 .add(Attributes.MAX_HEALTH, 5.0D)
-                .add(Attributes.FOLLOW_RANGE, Double.MIN_NORMAL)
+                .add(Attributes.FOLLOW_RANGE, 40.0D)
                 .add(Attributes.MOVEMENT_SPEED, Double.MIN_NORMAL)
                 .add(Attributes.ATTACK_KNOCKBACK, 0.5D);
     }

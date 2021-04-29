@@ -10,17 +10,20 @@
         * It should do something to indicate that it's an active portal, maybe give off particles
 
 ## The two layers of the dimension
-![](img/layers.png)
-(The open ocean area will have more space)
+![](img/Biome_Cross_Section.png)
 
 ### Light Zone
+* Air pockets and caves at the top
 * This area is brighter
     * It has sea lanterns
     * The player either has permanent night vision here, or maybe the water emits light
+* Basic monsters to face
 
 ### Dark Zone
+* Caves at the bottom
 * This are is darker
     * The water may be a different block that mimics water, but is darker in color
+* Tougher monsters to face
 
 ## Things in the dimension
 

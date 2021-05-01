@@ -17,11 +17,19 @@ import java.util.Random;
 public class DeepBlueSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 
     private static SimplexNoiseGenerator deep_blue_noise;
+    private static boolean noise_is_initialized;
 
-    public DeepBlueSurfaceBuilder(Codec<SurfaceBuilderConfig> codec) { super(codec);deep_blue_noise = new SimplexNoiseGenerator(new Random(12345));}
+    public DeepBlueSurfaceBuilder(Codec<SurfaceBuilderConfig> codec) { super(codec); noise_is_initialized = false;}
 
     @Override
     public void apply(Random random, IChunk chunkIn, Biome biomeIn, int x, int z, int startHeight, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig config) {
+
+        // initialize noise if not initialized
+        if (!noise_is_initialized) {
+            deep_blue_noise = new SimplexNoiseGenerator(new Random(seed));
+            noise_is_initialized = true;
+        }
+
         BlockState air = config.getTopMaterial();
         BlockState stone = config.getUnderMaterial();
         BlockState sand = config.getUnderwaterMaterial();
@@ -32,7 +40,7 @@ public class DeepBlueSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig>
         int zpos = z & 15;
 
         Double caveNoiseMultiplier = 0.03;
-        Double caveWindow = 0.027;
+        Double caveWindow = 0.05;
         Double upperSurfaceMultiplier1 = 0.01;
         Double upperSurfaceMultiplier2 = 0.04;
 

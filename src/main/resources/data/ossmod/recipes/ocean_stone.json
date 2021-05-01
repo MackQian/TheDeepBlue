@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ossmod:ocean_stone_block"
+    }
+  ],
+  "result": {
+    "item": "ossmod:ocean_stone",
+    "count": 9
+  }
+}

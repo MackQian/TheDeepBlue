@@ -7,6 +7,8 @@ import com.oss.ossmod.common.block.SoakedBlock;
 import com.oss.ossmod.common.block.SoakedOreBlock;
 import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
 import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
+
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -61,7 +63,11 @@ public class Registration {
     public static final RegistryObject<SoakedBlock> OCEAN_STONE_ORE = BLOCKS.register("ocean_stone_ore", () -> new SoakedOreBlock(Block.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F).lightLevel((p_235464_0_) -> {
         return 6;
     })));
-    public static final RegistryObject<Item> OCEAN_STONE_ITEM = ITEMS.register("ocean_stone_ore", () -> new BlockItem(OCEAN_STONE_ORE.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+    public static final RegistryObject<Block> OCEAN_STONE_BLOCK = BLOCKS.register("ocean_stone_block", () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.LAPIS).requiresCorrectToolForDrops().strength(3.0F, 3.0F).lightLevel((p_235464_0_) -> {
+        return 15;
+    })));
+    public static final RegistryObject<Item> OCEAN_STONE_ORE_ITEM = ITEMS.register("ocean_stone_ore", () -> new BlockItem(OCEAN_STONE_ORE.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+    public static final RegistryObject<Item> OCEAN_STONE_BLOCK_ITEM = ITEMS.register("ocean_stone_block", () -> new BlockItem(OCEAN_STONE_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
     public static final RegistryObject<Item> OCEAN_STONE = ITEMS.register("ocean_stone", () -> new Item((new Item.Properties()).tab(ItemGroup.TAB_MATERIALS)));
 
 

@@ -14,9 +14,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SoakedStoneBlock extends BreakableBlock {
+public class SoakedBlock extends BreakableBlock {
 
-    public SoakedStoneBlock(AbstractBlock.Properties p_i48375_1_) {
+    public SoakedBlock(AbstractBlock.Properties p_i48375_1_) {
         super(p_i48375_1_);
     }
 

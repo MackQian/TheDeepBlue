@@ -20,21 +20,20 @@ Before starting your contribution, make sure to read our [Code of Conduct](https
 
 ### Build and Run
 
+#### NOTE: All commands should be run in the command line in your project directory.
+
 1. Open the project in your IDE of choice
 2. Set up the IDE:
 	* Intellij IDEA: ```gradlew genIntellijRuns```
 	* Eclipse IDE: ```gradlew genEclipseRuns```
 3. Build: ```gradlew build```
-4. Run:
+4. Run (Client can be run independently):
 	* Client: ```gradlew runClient```
 	* Server: ```gradlew runServer```
 
-#### NOTE
-All commands should be run in the gradle terminal of your IDE.
-
 
 ## Style guidelines
-Although we don't have any formal guidelines on Java code itself, we ask that you make sure to use comments wherever necessary. Spending less than a minute write out a comment explaining your block of code can save another developer half an hour of reading and testing it. We also ask that you follow our current directory structure, separating Client and Server code into our `client` and `common` directories. 
+Although we don't have any formal guidelines on Java code itself, we ask that you make sure to use comments wherever necessary. Spending less than a minute to write out a comment explaining your block of code can save another developer half an hour of reading and testing it. We also ask that you follow our current directory structure, separating Client and Server code into our `client` and `common` directories. 
 
 ## Contributing New Features
 

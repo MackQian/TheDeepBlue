@@ -67,7 +67,7 @@ public class OssMod
     	// Render any entities that we've made - maybe convert this into a list as we get more...
         RenderingRegistry.registerEntityRenderingHandler(Registration.BLOBFISH.get(), BlobfishRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(Registration.SEAURCHIN.get(), SeaurchinRenderer::new);
-        // Add biomes to the Manager - there's only going to be one biome in our dimension.
+        // Add biomes to the Manager - there's only going to be one biome in our dimension so far.
         BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(OssMod.MODID, "deep_blue")), 10000));
 
         event.enqueueWork(() -> {

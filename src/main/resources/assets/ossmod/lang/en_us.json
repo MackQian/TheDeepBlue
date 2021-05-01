@@ -1,5 +1,7 @@
 {
     "item.ossmod.scuba_item": "Scuba Tank",
     "block.ossmod.soaked_stone_block": "Soaked Stone",
-    "block.ossmod.soaked_sand_block": "Soaked Sand"
+    "block.ossmod.soaked_sand_block": "Soaked Sand",
+    "block.ossmod.ocean_stone_ore": "Ocean Stone",
+    "item.ossmod.ocean_stone": "Ocean Stone"
 }

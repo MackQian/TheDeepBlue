@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "ossmod:block/ocean_stone_ore_model" }
+    }
+}

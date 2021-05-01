@@ -4,6 +4,7 @@ import com.oss.ossmod.common.biomes.DeepBlueBiome;
 import com.oss.ossmod.common.biomes.DeepBlueSurfaceBuilder;
 import com.oss.ossmod.common.item.scubaItem;
 import com.oss.ossmod.common.block.SoakedBlock;
+import com.oss.ossmod.common.block.SoakedOreBlock;
 import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
 import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
 import net.minecraft.block.Block;
@@ -55,6 +56,13 @@ public class Registration {
     public static final RegistryObject<Item> SOAKED_STONE_BLOCK_ITEM = ITEMS.register("soaked_stone_block", () -> new BlockItem(SOAKED_STONE_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
     public static final RegistryObject<SoakedBlock> SOAKED_SAND_BLOCK = BLOCKS.register("soaked_sand_block", () -> new SoakedBlock(Block.Properties.of(Material.SAND, MaterialColor.SAND).strength(0.5f).harvestTool(ToolType.SHOVEL).sound(SoundType.SAND)));
     public static final RegistryObject<Item> SOAKED_SAND_BLOCK_ITEM = ITEMS.register("soaked_sand_block", () -> new BlockItem(SOAKED_SAND_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+    
+    // Ocean stone
+    public static final RegistryObject<SoakedBlock> OCEAN_STONE_ORE = BLOCKS.register("ocean_stone_ore", () -> new SoakedOreBlock(Block.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F).lightLevel((p_235464_0_) -> {
+        return 6;
+    })));
+    public static final RegistryObject<Item> OCEAN_STONE_ITEM = ITEMS.register("ocean_stone_ore", () -> new BlockItem(OCEAN_STONE_ORE.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+    public static final RegistryObject<Item> OCEAN_STONE = ITEMS.register("ocean_stone", () -> new Item((new Item.Properties()).tab(ItemGroup.TAB_MATERIALS)));
 
 
     // Registering the Blobfish

@@ -16,8 +16,8 @@ import net.minecraft.world.World;
 
 public class SoakedBlock extends BreakableBlock {
 
-    public SoakedBlock(AbstractBlock.Properties p_i48375_1_) {
-        super(p_i48375_1_);
+    public SoakedBlock(AbstractBlock.Properties props) {
+        super(props);
     }
 
     public void playerDestroy(World world, PlayerEntity playerEntity, BlockPos blockPos, BlockState blockState, @Nullable TileEntity tileEntity, ItemStack itemStack) {

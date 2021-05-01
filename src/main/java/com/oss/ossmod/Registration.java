@@ -7,7 +7,9 @@ import com.oss.ossmod.common.block.SoakedBlock;
 import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
 import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
@@ -49,9 +51,9 @@ public class Registration {
 //    }));
     
     // Registering soaked stone
-    public static final RegistryObject<SoakedBlock> SOAKED_STONE_BLOCK = BLOCKS.register("soaked_stone_block", () -> new SoakedBlock(Block.Properties.of(Material.STONE).strength(1.5f).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE)));
+    public static final RegistryObject<SoakedBlock> SOAKED_STONE_BLOCK = BLOCKS.register("soaked_stone_block", () -> new SoakedBlock(Block.Properties.of(Material.STONE, MaterialColor.STONE).strength(1.5f, 6.0f).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE)));
     public static final RegistryObject<Item> SOAKED_STONE_BLOCK_ITEM = ITEMS.register("soaked_stone_block", () -> new BlockItem(SOAKED_STONE_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
-    public static final RegistryObject<SoakedBlock> SOAKED_SAND_BLOCK = BLOCKS.register("soaked_sand_block", () -> new SoakedBlock(Block.Properties.of(Material.SAND).strength(0.5f).harvestTool(ToolType.SHOVEL)));
+    public static final RegistryObject<SoakedBlock> SOAKED_SAND_BLOCK = BLOCKS.register("soaked_sand_block", () -> new SoakedBlock(Block.Properties.of(Material.SAND, MaterialColor.SAND).strength(0.5f).harvestTool(ToolType.SHOVEL).sound(SoundType.SAND)));
     public static final RegistryObject<Item> SOAKED_SAND_BLOCK_ITEM = ITEMS.register("soaked_sand_block", () -> new BlockItem(SOAKED_SAND_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
 
 

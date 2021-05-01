@@ -40,16 +40,18 @@ public class OssMod
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    // The ID used here gets used for identifiers in Minecraft commands/descriptions.
+    // ex "locatebiome <MODID>:deepblue" would locate the deepblue biome from this mod.
     public static final String MODID = "ossmod";
 
     public OssMod() {
-        // Register the setup method for modloading
+        // Register methods to be called while loading the mod.
+    	// initial setup method
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
+        // enqueueIMC and processIMC are used for communication between mods.
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        // Register the doClientStuff method for modloading
+        // Client-only methods are registered in doClientStuff.
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in
@@ -62,13 +64,14 @@ public class OssMod
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+    	// Render any entities that we've made - maybe convert this into a list as we get more...
         RenderingRegistry.registerEntityRenderingHandler(Registration.BLOBFISH.get(), BlobfishRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(Registration.SEAURCHIN.get(), SeaurchinRenderer::new);
+        // Add biomes to the Manager - there's only going to be one biome in our dimension.
         BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(OssMod.MODID, "deep_blue")), 10000));
 
         event.enqueueWork(() -> {
-            // Register the entity attributes
+            // Register the entity attributes - maybe convert to a list once more come...
             GlobalEntityTypeAttributes.put(Registration.BLOBFISH.get(), BlobfishEntity.prepareAttributes().build());
             GlobalEntityTypeAttributes.put(Registration.SEAURCHIN.get(), SeaurchinEntity.prepareAttributes().build());
 

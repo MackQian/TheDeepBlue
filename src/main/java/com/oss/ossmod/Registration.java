@@ -2,6 +2,7 @@ package com.oss.ossmod;
 
 import com.oss.ossmod.common.biomes.DeepBlueBiome;
 import com.oss.ossmod.common.biomes.DeepBlueSurfaceBuilder;
+import com.oss.ossmod.common.item.OssmodItemTier;
 import com.oss.ossmod.common.item.scubaItem;
 import com.oss.ossmod.common.block.SoakedBlock;
 import com.oss.ossmod.common.block.SoakedOreBlock;
@@ -16,9 +17,14 @@ import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
@@ -69,6 +75,13 @@ public class Registration {
     public static final RegistryObject<Item> OCEAN_STONE_ORE_ITEM = ITEMS.register("ocean_stone_ore", () -> new BlockItem(OCEAN_STONE_ORE.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
     public static final RegistryObject<Item> OCEAN_STONE_BLOCK_ITEM = ITEMS.register("ocean_stone_block", () -> new BlockItem(OCEAN_STONE_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
     public static final RegistryObject<Item> OCEAN_STONE = ITEMS.register("ocean_stone", () -> new Item((new Item.Properties()).tab(ItemGroup.TAB_MATERIALS)));
+    
+    // Ocean stone tools
+    public static final RegistryObject<Item> OCEAN_STONE_SWORD = ITEMS.register("ocean_stone_sword", () -> new SwordItem(OssmodItemTier.OCEAN_STONE, 3, -2.4F, (new Item.Properties()).tab(ItemGroup.TAB_COMBAT)));
+    public static final RegistryObject<Item> OCEAN_STONE_SHOVEL = ITEMS.register("ocean_stone_shovel", () -> new ShovelItem(OssmodItemTier.OCEAN_STONE, 1.5F, -3.0F, (new Item.Properties()).tab(ItemGroup.TAB_TOOLS)));
+    public static final RegistryObject<Item> OCEAN_STONE_PICKAXE = ITEMS.register("ocean_stone_pickaxe", () -> new PickaxeItem(OssmodItemTier.OCEAN_STONE, 1, -2.8F, (new Item.Properties()).tab(ItemGroup.TAB_TOOLS)));
+    public static final RegistryObject<Item> OCEAN_STONE_AXE = ITEMS.register("ocean_stone_axe", () -> new AxeItem(OssmodItemTier.OCEAN_STONE, 5.0F, -3.0F, (new Item.Properties()).tab(ItemGroup.TAB_TOOLS)));
+    public static final RegistryObject<Item> OCEAN_STONE_HOE = ITEMS.register("ocean_stone_hoe", () -> new HoeItem(OssmodItemTier.OCEAN_STONE, -3, 0.0F, (new Item.Properties()).tab(ItemGroup.TAB_TOOLS)));
 
 
     // Registering the Blobfish

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "ossmod:ocean_stone_ingot"
+    }
+  },
+  "result": {
+    "item": "ossmod:ocean_stone_sword"
+  }
+}

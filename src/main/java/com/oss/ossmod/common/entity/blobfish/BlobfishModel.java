@@ -6,12 +6,9 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
-// Created using BlocbBench
+// Created using BlockBench
 // To fix:
 // 1. replace textureWidth and textureHeight with bb_main.setTexSize(textureWidth, textureHeight);
-// 2. replace setrotationpoint with setPos
-// 3. replace settextureoffset with texOffs
-// 4. replace setrotationangle by accessing the public xRot, yRot, and zRot of the modelrenderer
 
 // USE https://replit.com/@JimJimmy/Blockbench-Converter#main.py
 
@@ -26,13 +23,15 @@ public class BlobfishModel extends EntityModel<BlobfishEntity> {
         bb_main = new ModelRenderer(this);
         bb_main.setTexSize(32, 32);
 
+        // set the texture coordinates and construct the actual model
         bb_main.setPos(0.0F, 24.0F, 0.0F);
         bb_main.texOffs(0, 0).addBox(-3.0F, -7.0F, -6.0F, 6.0F, 6.0F, 6.0F, 0.0F, false);
         bb_main.texOffs(14, 12).addBox(-2.0F, -6.0F, 0.0F, 4.0F, 4.0F, 3.0F, 0.0F, false);
         bb_main.texOffs(0, 0).addBox(-1.0F, -5.0F, 3.0F, 2.0F, 2.0F, 1.0F, 0.0F, false);
         bb_main.texOffs(0, 19).addBox(-1.0F, -7.0F, 0.0F, 2.0F, 1.0F, 2.0F, 0.0F, false);
         bb_main.texOffs(8, 19).addBox(-1.0F, -5.0F, -6.5F, 2.0F, 1.0F, 1.0F, 0.0F, false);
-
+        
+        // add additional polygons for the tail and fins
         Tail4_r1 = new ModelRenderer(this);
         Tail4_r1.setPos(0.0F, -4.0F, -3.0F);
         bb_main.addChild(Tail4_r1);
@@ -62,7 +61,7 @@ public class BlobfishModel extends EntityModel<BlobfishEntity> {
     @Override
     public void setupAnim(BlobfishEntity blobfishEntity, float v, float v1, float v2, float v3, float v4) {
     }
-
+    // loads the model's vertex representation to the drawing buffer.
     @Override
     public void renderToBuffer(MatrixStack matrixStack, IVertexBuilder iVertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
         bb_main.render(matrixStack, iVertexBuilder, packedLightIn, packedOverlayIn, red, green, blue, alpha);

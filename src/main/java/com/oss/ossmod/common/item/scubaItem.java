@@ -23,10 +23,11 @@ public class scubaItem extends Item {
     }
 
     @Override
+    // This item can be equipped as a chest armor piece.
     public boolean canEquip(ItemStack stack, EquipmentSlotType armorType, Entity entity) {
         return armorType==EquipmentSlotType.CHEST;
     }
-
+    // Adds waterbreathing when the user is underwater, takes one durability per 20 seconds.
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
         if(player.isUnderWater()){

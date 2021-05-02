@@ -9,6 +9,8 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 // Created using BlockBench
 
 public class SeaurchinModel extends EntityModel<SeaurchinEntity> {
+	// possible todo - procedurally generate the spikes?
+	// this takes up much more than it needs to.
     private final ModelRenderer bb_main;
     private final ModelRenderer spike_r1;
     private final ModelRenderer spike_r2;
@@ -64,12 +66,12 @@ public class SeaurchinModel extends EntityModel<SeaurchinEntity> {
     private final ModelRenderer spike_r52;
 
     public SeaurchinModel() {
-
+    	// keep the main body as is.
         bb_main = new ModelRenderer(this);
         bb_main.setTexSize(64,64);
         bb_main.setPos(0.0F, 24.0F, 0.0F);
         bb_main.texOffs(0, 0).addBox(-2.0F, -5.0F, -2.0F, 4.0F, 4.0F, 4.0F, 0.0F, false);
-
+        // there's probably some function that models all of these spikes.
         spike_r1 = new ModelRenderer(this);
         spike_r1.setPos(0.0F, -2.0F, 0.0F);
         bb_main.addChild(spike_r1);
@@ -491,7 +493,7 @@ public class SeaurchinModel extends EntityModel<SeaurchinEntity> {
     @Override
     public void setupAnim(SeaurchinEntity seaurchinEntity, float v, float v1, float v2, float v3, float v4) {
     }
-
+    // see Blobfish for what this does
     @Override
     public void renderToBuffer(MatrixStack matrixStack, IVertexBuilder iVertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
 

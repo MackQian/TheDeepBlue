@@ -13,9 +13,9 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 import java.util.Random;
 
-
+// This is used to actually build the biome for The Deep Blue
 public class DeepBlueSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
-
+	// this is to facilitate randomness for surface generation
     private static SimplexNoiseGenerator deep_blue_noise;
     private static boolean noise_is_initialized;
 
@@ -29,16 +29,21 @@ public class DeepBlueSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig>
             deep_blue_noise = new SimplexNoiseGenerator(new Random(seed));
             noise_is_initialized = true;
         }
-
+        // default block for the topmost layer of the terrain
         BlockState air = config.getTopMaterial();
+        // default block for directly under the topmost layer
         BlockState stone = config.getUnderMaterial();
+        // default block to use under bodies of water
         BlockState sand = config.getUnderwaterMaterial();
         BlockPos.Mutable blockpos$Mutable = new BlockPos.Mutable();
         int i = -1;
         int j = (int) (noise / 3.0D + 3.0D + random.nextDouble() * 0.25D);
+        // x and z are horizontal measurements, while y is vertical.
+        // each chunk is 16 by 16 blocks in x and z and unbounded by y.
         int xpos = x & 15;
         int zpos = z & 15;
 
+        // multipliers and/or tunable parameters
         Double caveNoiseMultiplier = 0.03;
         Double caveWindow = 0.05;
         Double upperSurfaceMultiplier1 = 0.01;
@@ -46,14 +51,15 @@ public class DeepBlueSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig>
 
         int upperSurface = (int)(deep_blue_noise.getValue(x*upperSurfaceMultiplier1,z*upperSurfaceMultiplier1) * 50) + 190;
         upperSurface += (int)(deep_blue_noise.getValue((9999+x)*upperSurfaceMultiplier2,(9999+z)*upperSurfaceMultiplier2) * 10);
-
+        // this goes through every block in a column
         for (int ypos = 255; ypos >= 0; --ypos) {
+        	// get a reference to the current block we want to modify
             blockpos$Mutable.set(xpos, ypos, zpos);
             BlockState curblockstate = chunkIn.getBlockState(blockpos$Mutable);
             curblockstate.getBlock();
 
             // fill is the block placed anywhere there isn't a solid block.
-            // this is water for most of the biome but air above y 210
+            // this is water for most of the biome but air above y 230 - at least some air for the player to breathe.
             BlockState fill = defaultFluid;
             if(ypos > 230) {
                 fill = air;

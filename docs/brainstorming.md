@@ -70,3 +70,6 @@
 
 ### Sounds
 * Random ambient ocean sounds when you're in the dimension
+
+### Useful Links
+Good site for initial minecraft/forge documentation: https://lazdude2012.github.io/YATS/index.html

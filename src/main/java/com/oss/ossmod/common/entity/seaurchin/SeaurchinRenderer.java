@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 
 
 public class SeaurchinRenderer extends MobRenderer<SeaurchinEntity, SeaurchinModel> {
-
+	// textures are stored in the respectively named directory.
     private static final ResourceLocation TEXTURE = new ResourceLocation(OssMod.MODID, "textures/entity/seaurchin.png");
 
     public SeaurchinRenderer(EntityRendererManager manager) {

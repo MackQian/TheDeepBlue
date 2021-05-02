@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 
 
 public class BlobfishRenderer extends MobRenderer<BlobfishEntity, BlobfishModel> {
-
+	// store the texture location for easier referencing in the future.
     private static final ResourceLocation TEXTURE = new ResourceLocation(OssMod.MODID, "textures/entity/blobfish.png");
 
     public BlobfishRenderer(EntityRendererManager manager) {

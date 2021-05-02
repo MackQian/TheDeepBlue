@@ -28,7 +28,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 
 /*
-A Sea Urchin entity. Poisons the player if they get near
+A Sea Urchin entity. Poisons the player if they make contact.
 */
 
 public class SeaurchinEntity extends WaterMobEntity {
@@ -37,12 +37,12 @@ public class SeaurchinEntity extends WaterMobEntity {
         super(entityType, world);
 
     }
-
+    // the Sea Urchin will try to attack the player if they are near.
     protected void registerGoals() {
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0D, false));
     }
-
+    // poison any living entities that it hurts.
     public boolean doHurtTarget(Entity p_70652_1_) {
         if (super.doHurtTarget(p_70652_1_)) {
             if (p_70652_1_ instanceof LivingEntity) {
@@ -53,7 +53,7 @@ public class SeaurchinEntity extends WaterMobEntity {
             return false;
         }
     }
-
+    // if the urchin was hurt by a living entity, poison it.
     @Override
     public boolean hurt(@Nullable DamageSource damageSource, float damage) {
         if (damageSource != null) {
@@ -66,7 +66,7 @@ public class SeaurchinEntity extends WaterMobEntity {
         }
         return super.hurt(damageSource, damage);
     }
-
+    // standard attributes, its damage is poison-based.
     public static AttributeModifierMap.MutableAttribute prepareAttributes() {
         return LivingEntity.createLivingAttributes()
                 .add(Attributes.ATTACK_DAMAGE, 0.5D)

@@ -15,7 +15,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attributes;
 
 /*
-A blobfish entity
+A blobfish entity.
+This class determines blobfishes' behavior and interactions
+with the player/actions of the player.
 */
 
 public class BlobfishEntity extends AbstractGroupFishEntity {
@@ -24,15 +26,16 @@ public class BlobfishEntity extends AbstractGroupFishEntity {
         super(entityType, world);
 
     }
-
+    // schooling behavior is the default fish schooling behavior with up to 4 entities.
     public int getMaxSchoolSize() {
         return 4;
     }
-
+    // we can pick the blobfish up using a bucket.
+    // currently it only gives a bucket of salmon, change this later.
     protected ItemStack getBucketItemStack() {
         return new ItemStack(Items.SALMON_BUCKET);
     }
-
+    // we use slime sounds for the blob fish.
     protected SoundEvent getAmbientSound() {
         return SoundEvents.SLIME_SQUISH_SMALL;
     }
@@ -48,7 +51,7 @@ public class BlobfishEntity extends AbstractGroupFishEntity {
     protected SoundEvent getFlopSound() {
         return SoundEvents.SLIME_JUMP_SMALL;
     }
-
+    // blob fish is a passive mob, but attack value is added because all creatures have one.
     public static AttributeModifierMap.MutableAttribute prepareAttributes() {
         return LivingEntity.createLivingAttributes()
                 .add(Attributes.ATTACK_DAMAGE, 3.0D)

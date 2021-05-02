@@ -10,6 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.function.Supplier;
 
 public class DeepBlueBiome {
+	// This is where we add the biomes that we want to add to the dimension.
     public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, OssMod.MODID);
 
     static {

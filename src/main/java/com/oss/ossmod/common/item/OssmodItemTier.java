@@ -7,7 +7,8 @@ import com.oss.ossmod.Registration;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
-
+// This is to make Ocean Stone Tools (sword, axe, etc.).
+// It is passed as an argument to a tool class (SwordItem, AxeItem, or equiv).
 public enum OssmodItemTier implements IItemTier {
    OCEAN_STONE(3, 1561, 8.0F, 3.0F, 10, () -> {
       return Ingredient.of(Registration.OCEAN_STONE.get());
@@ -32,7 +33,7 @@ public enum OssmodItemTier implements IItemTier {
    public int getUses() {
       return this.uses;
    }
-
+   // attack speed
    public float getSpeed() {
       return this.speed;
    }
@@ -44,11 +45,11 @@ public enum OssmodItemTier implements IItemTier {
    public int getLevel() {
       return this.level;
    }
-
+   // returns the list of enchantments on this.
    public int getEnchantmentValue() {
       return this.enchantmentValue;
    }
-
+   // gets whatever material we can use to repair the tool.
    public Ingredient getRepairIngredient() {
       return this.repairIngredient.get();
    }

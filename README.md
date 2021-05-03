@@ -11,6 +11,3 @@ This mod is very much a work in progress. We hope to add all of those features a
 3. [Blockbench Model Editor](https://blockbench.net/)
 4. [The Minecraft Worldgen Discord Server](https://discord.gg/BuBGds9)
 	* Especially user: TelepathicGrunt
-
-
-## Use

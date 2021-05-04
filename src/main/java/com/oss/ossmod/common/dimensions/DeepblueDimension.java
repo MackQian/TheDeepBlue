@@ -18,7 +18,7 @@ public class DeepblueDimension {
 	public static final RegistryKey<World> DEEPBLUE_WORLD =
 			RegistryKey.create(Registry.DIMENSION_REGISTRY, name("deepblue"));
 
-    // for use with package generation
+    // for use with initializing registries
     private static ResourceLocation name(String name) {
         return new ResourceLocation(OssMod.MODID, name);
     }

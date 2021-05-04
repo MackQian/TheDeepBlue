@@ -1,20 +1,24 @@
 package com.oss.ossmod;
 
+// entity imports
+import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
+import com.oss.ossmod.common.entity.blobfish.BlobfishRenderer;
+import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
+import com.oss.ossmod.common.entity.seaurchin.SeaurchinRenderer;
+// biome imports
 import com.oss.ossmod.common.biomes.DeepBlueBiome;
 import com.oss.ossmod.common.biomes.DeepBlueSurfaceBuilder;
+// minecraft imports
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
+// forge imports
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import com.oss.ossmod.common.entity.blobfish.BlobfishEntity;
-import com.oss.ossmod.common.entity.blobfish.BlobfishRenderer;
-import com.oss.ossmod.common.entity.seaurchin.SeaurchinEntity;
-import com.oss.ossmod.common.entity.seaurchin.SeaurchinRenderer;
-
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.RegistryObject;
@@ -28,10 +32,9 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+// other imports
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
-
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -40,8 +43,7 @@ public class OssMod
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
-    // The ID used here gets used for identifiers in Minecraft commands/descriptions.
-    // ex "locatebiome <MODID>:deepblue" would locate the deepblue biome from this mod.
+    // The ID used here gets used in other classes and registration.
     public static final String MODID = "ossmod";
 
     public OssMod() {
